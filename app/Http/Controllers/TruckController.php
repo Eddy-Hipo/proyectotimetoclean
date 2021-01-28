@@ -18,11 +18,10 @@ use Illuminate\Http\Request;
 class TruckController extends Controller
 {
     public function index(){
-        $this->authorize('viewAny', Truck::class);
+        //$this->authorize('viewAny', Truck::class);
         return new TruckCollection(Truck::paginate(10));
     }
     public function show(Truck $truck){
-        $this->authorize('viewAny', Truck::class);
         //$this->authorize('view',$truck);
         return response()->json(new TruckResource($truck),200);
     }
