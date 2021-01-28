@@ -30,10 +30,10 @@ Route::get('neighborhoods', 'App\Http\Controllers\NeighborhoodController@index')
 Route::get('neighborhoods/{neighborhood}', 'App\Http\Controllers\NeighborhoodController@show');
 Route::post('complaints', 'App\Http\Controllers\ComplaintController@store');
 Route::get('trucks', 'App\Http\Controllers\truckController@index');
-
+Route::get('users', 'App\Http\Controllers\UserController@index');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
-    Route::get('users', 'App\Http\Controllers\UserController@index');
+    //Route::get('users', 'App\Http\Controllers\UserController@index');
     Route::get('user', 'App\Http\Controllers\UserController@getAuthenticatedUser');
     Route::get('users/{user}', 'App\Http\Controllers\UserController@show');
     Route::get('users/filter/alternate', 'App\Http\Controllers\UserController@showDriversAlternate');
