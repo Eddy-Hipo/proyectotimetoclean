@@ -22,7 +22,8 @@ class TruckController extends Controller
         return new TruckCollection(Truck::paginate(10));
     }
     public function show(Truck $truck){
-        $this->authorize('view',$truck);
+        $this->authorize('viewAny', Truck::class);
+        //$this->authorize('view',$truck);
         return response()->json(new TruckResource($truck),200);
     }
 
