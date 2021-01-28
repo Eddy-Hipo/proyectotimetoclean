@@ -25,6 +25,7 @@ use App\Models\Complaint;
 
 Route::post('login', 'App\Http\Controllers\UserController@authenticate');
 
+
 Route::get('neighborhoods', 'App\Http\Controllers\NeighborhoodController@index');
 Route::get('neighborhoods/{neighborhood}', 'App\Http\Controllers\NeighborhoodController@show');
 Route::post('complaints', 'App\Http\Controllers\ComplaintController@store');
