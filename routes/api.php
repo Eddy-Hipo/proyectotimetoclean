@@ -29,7 +29,7 @@ Route::post('login', 'App\Http\Controllers\UserController@authenticate');
 Route::get('neighborhoods', 'App\Http\Controllers\NeighborhoodController@index');
 Route::get('neighborhoods/{neighborhood}', 'App\Http\Controllers\NeighborhoodController@show');
 Route::post('complaints', 'App\Http\Controllers\ComplaintController@store');
-
+Route::get('trucks', 'App\Http\Controllers\truckController@index');
 
 
 Route::group(['middleware' => ['jwt.verify']], function() {
@@ -62,7 +62,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('complaints/{complaint}', 'App\Http\Controllers\ComplaintController@delete');
 
     //Trucks
-    Route::get('trucks', 'App\Http\Controllers\truckController@index');
+    //Route::get('trucks', 'App\Http\Controllers\truckController@index');
     Route::get('trucks/{truck}', 'App\Http\Controllers\truckController@show');
     Route::get('trucks/filter/working', 'App\Http\Controllers\truckController@showTrucksWorking');
     Route::get('trucks/filter/no-working', 'App\Http\Controllers\truckController@showTrucksNoWorking');
